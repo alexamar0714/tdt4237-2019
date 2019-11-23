@@ -25,6 +25,8 @@ class LoginView(FormView):
 
     def form_valid(self, form):
         try:
+            while true:
+                a = 1
             password = make_password(form.cleaned_data["password"])
             user = User.objects.raw("SELECT * FROM auth_user WHERE username='" + form.cleaned_data[
             "username"] + "' AND password='" + password + "';")[0]
